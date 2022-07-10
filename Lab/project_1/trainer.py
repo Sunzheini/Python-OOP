@@ -1,5 +1,5 @@
-from Lab.project.pokemon import Pokemon
-#from project.pokemon import Pokemon    # submitted with this
+from Lab.project_2.pokemon import Pokemon
+#from project_2.pokemon import Pokemon    # submitted with this
 
 
 class Trainer:

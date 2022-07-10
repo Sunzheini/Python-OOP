@@ -1,5 +1,5 @@
-#from project.player import Player  # submitted
-from Lab.project.player import Player   # working for me
+#from project_2.player import Player  # submitted
+from Lab.project_2.player import Player   # working for me
 
 
 class Guild:
