@@ -78,14 +78,14 @@
 
 # lab: mark as resources root
 #       food: mark as sources root
-#               project:
+#               project_3:
 #                       food.py
 #                       fruit.py
 
 # ----------------------------------------------------------------
 
 # 2 - folder
-# from project.dog import Dog
+# from project_3.dog import Dog
 #
 # dog = Dog()
 # print(dog.eat())

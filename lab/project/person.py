@@ -1,3 +1,6 @@
 class Person:
-    def sleep(self):
-        return "sleeping..."
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
