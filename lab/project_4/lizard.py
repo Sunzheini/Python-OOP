@@ -1,6 +1,7 @@
-from project.mammal import Mammal
+from project_4.reptile import Reptile
 
 
-class Bear(Mammal):
+class Lizard(Reptile):
     def __init__(self, name):
         super().__init__(name)
+

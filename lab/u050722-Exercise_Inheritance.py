@@ -12,8 +12,8 @@
 # --------------------------------------------
 
 # 1
-# from project.child import Child
-# from project.person import Person
+# from project_4.child import Child
+# from project_4.person import Person
 #
 # person = Person("Peter", 25)
 # child = Child("Peter Junior", 5)
@@ -24,8 +24,8 @@
 # --------------------------------------------
 
 # 2
-# from project.lizard import Lizard
-# from project.mammal import Mammal
+# from project_4.lizard import Lizard
+# from project_4.mammal import Mammal
 #
 # mammal = Mammal("Stella")
 # print(mammal.__class__.__bases__[0].__name__)
@@ -37,8 +37,8 @@
 # --------------------------------------------
 
 # 3
-# from project.elf import Elf
-# from project.hero import Hero
+# from project_4.elf import Elf
+# from project_4.hero import Hero
 #
 # hero = Hero("H", 4)
 # print(hero.username)
@@ -61,8 +61,8 @@
 # --------------------------------------------
 
 # 4
-# from project.family_car import FamilyCar
-# from project.vehicle import Vehicle
+# from project_4.family_car import FamilyCar
+# from project_4.vehicle import Vehicle
 #
 #
 # vehicle = Vehicle(50, 150)
@@ -83,9 +83,9 @@
 # --------------------------------------------
 
 # 5
-from project.drink import Drink
-from project.food import Food
-from project.product_repository import ProductRepository
+from project_4.drink import Drink
+from project_4.food import Food
+from project_4.product_repository import ProductRepository
 
 
 food = Food("apple")

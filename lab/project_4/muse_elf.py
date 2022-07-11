@@ -1,6 +1,6 @@
-from project.dark_wizard import DarkWizard
+from project_4.elf import Elf
 
 
-class SoulMaster(DarkWizard):
+class MuseElf(Elf):
     def __init__(self, username, level):
         super().__init__(username, level)

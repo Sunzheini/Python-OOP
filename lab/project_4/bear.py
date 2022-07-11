@@ -1,6 +1,6 @@
-from project.mammal import Mammal
+from project_4.mammal import Mammal
 
 
-class Gorilla(Mammal):
+class Bear(Mammal):
     def __init__(self, name):
         super().__init__(name)

@@ -1,4 +1,4 @@
-from project.hero import Hero
+from project_4.hero import Hero
 
 
 class Elf(Hero):

@@ -1,7 +1,7 @@
-from project.motorcycle import Motorcycle
+from project_4.vehicle import Vehicle
 
 
-class CrossMotorcycle(Motorcycle):
+class Motorcycle(Vehicle):
 
     def __init__(self, fuel, horse_power):
         super().__init__(fuel, horse_power)

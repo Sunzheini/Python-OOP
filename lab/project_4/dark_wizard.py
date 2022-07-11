@@ -1,6 +1,6 @@
-from project.dark_knight import DarkKnight
+from project_4.wizard import Wizard
 
 
-class BladeKnight(DarkKnight):
+class DarkWizard(Wizard):
     def __init__(self, username, level):
         super().__init__(username, level)
