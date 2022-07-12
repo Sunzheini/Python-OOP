@@ -169,27 +169,92 @@
 # all - obratnoto
 
 # ------------------------------------------------------------------
-# name mangling na method
+# name mangling of method - (ne syshtestvuvat v naslednicite)
 
-class Person:
-    def __init__(self):
-        self.first_name = 'Peter'
-        self.last_name = 'Parker'
+# class Person:
+#     def __init__(self):
+#         self.first_name = 'Peter'
+#         self.last_name = 'Parker'
+#
+#     def __full_name(self):
+#         return f'{self.first_name} {self.last_name}'
+#
+#     def info(self):
+#         return self.__full_name()
+#
+#
+# p = Person()
+# print()
 
-    def __full_name(self):
-        return f'{self.first_name} {self.last_name}'
+# ------------------------------------------------------------------
 
-    def info(self):
-        return self.__full_name()
+# 4
+# class EmailValidator:
+#     def __init__(self, min_length, mails, domains):
+#         self.min_length = min_length
+#         self.mails = mails
+#         self.domains = domains
+#
+#     def __is_name_valid(self, name):
+#         return len(name) >= self.min_length
+#
+#     def __is_mail_valid(self, mail):
+#         return mail in self.mails
+#
+#     def __is_domain_valid(self, domain):
+#         return domain in self.domains
+#
+#     def validate(self, email):
+#         username = email.split('@')[0]
+#         mail, domain = email.split('@')[1].split('.')   # !!!
+#
+#         if self.__is_name_valid(username) and self.__is_mail_valid(mail) and self.__is_domain_valid(domain):
+#             return True
+#         else:
+#             return False
+#
+#
+# mails = ["gmail", "softuni"]
+# domains = ["com", "bg"]
+# email_validator = EmailValidator(6, mails, domains)
+# print(email_validator.validate("pe77er@gmail.com"))
+# print(email_validator.validate("georgios@gmail.net"))
+# print(email_validator.validate("stamatito@abv.net"))
+# print(email_validator.validate("abv@softuni.bg"))
+
+# ------------------------------------------------------------------
+
+# 5
+class Account:
+    def __init__(self, id, balance, pin):
+        self.__id = id
+        self.balance = balance
+        self.__pin = pin
+
+    def get_id(self, pin):
+        if pin == self.__pin:
+            return self.__id
+        return "Wrong pin"
+
+    def change_pin(self, old_pin, new_pin):
+        if old_pin == self.__pin:
+            self.__pin = new_pin
+            return "Pin changed"
+        return "Wrong pin"
 
 
-p = Person()
-print()
+account = Account(8827312, 100, 3421)
+print(account.get_id(1111))
+print(account.get_id(3421))
+print(account.balance)
+print(account.change_pin(2212, 4321))
+print(account.change_pin(3421, 1234))
 
-# -49:30
-
-
-
+# ------------------------------------------------------------------
+# getattr()
+# hasattr()
+# setattr()
+# delattr()
 
 
 
