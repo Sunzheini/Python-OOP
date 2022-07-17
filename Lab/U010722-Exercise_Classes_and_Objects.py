@@ -180,8 +180,8 @@
 
 # 5 + folder
 
-# from project.task import Task
-# from project.section import Section
+# from project_2.task import Task
+# from project_2.section import Section
 #
 #
 # task = Task("Make bed", "27/05/2020")
@@ -199,19 +199,35 @@
 
 
 # 6 + folder
-from project.guild import Guild
-from project.player import Player
+# from project_2.guild import Guild
+# from project_2.player import Player
+#
+#
+# player = Player("George", 50, 100)
+# print(player.add_skill("Shield Break", 20))
+# print(player.player_info())
+# guild = Guild("UGT")
+# print(guild.assign_player(player))
+# print(guild.guild_info())
 
 
-player = Player("George", 50, 100)
-print(player.add_skill("Shield Break", 20))
-print(player.player_info())
-guild = Guild("UGT")
-print(guild.assign_player(player))
-print(guild.guild_info())
+# 7 + folder
+from project_2.album import Album
+from project_2.song import Song
+from project_2.band import Band
 
+song = Song("Running in the 90s", 3.45, False)
+print(song.get_info())
+album = Album("Initial D", song)
+second_song = Song("Around the World", 2.34, False)
+print(album.add_song(second_song))
+print(album.details())
+print(album.publish())
+band = Band("Manuel")
+print(band.add_album(album))
+print(band.remove_album("Initial D"))
+print(band.details())
 
-# -1:26:04
 
 
 

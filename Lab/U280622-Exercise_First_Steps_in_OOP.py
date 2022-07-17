@@ -180,9 +180,9 @@
 # print(programmer.watch_course("Python Masterclass", "Python", 84))
 
 
-# 8 + /project
-from project.pokemon import Pokemon
-from project.trainer import Trainer
+# 8 + /project_2
+from project_2.pokemon import Pokemon
+from project_2.trainer import Trainer
 
 
 pokemon = Pokemon("Pikachu", 90)

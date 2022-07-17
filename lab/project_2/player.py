@@ -1,10 +1,12 @@
 class Player:
+    DEFAULT_GUILD = "Unaffiliated"
+
     def __init__(self, name, hp, mp):
         self.name = name
         self.hp = hp
         self.mp = mp
         self.skills = {}
-        self.guild = "Unaffiliated"
+        self.guild = self.DEFAULT_GUILD
 
     def add_skill(self, skill_name, mana_cost):
         if skill_name in self.skills:
@@ -14,14 +16,12 @@ class Player:
             return f"Skill {skill_name} added to the collection of the player {self.name}"
 
     def player_info(self):
-        result = ''
-
-        result += f"Name: {self.name}\n"
+        result = f"Name: {self.name}\n"
         result += f"Guild: {self.guild}\n"
         result += f"HP: {self.hp}\n"
         result += f"MP: {self.mp}\n"
 
-        for skill in self.skills.keys():
-            result += f"==={skill} - {self.skills[skill]}\n"
+        for skill_name, mana_cost in self.skills.items():
+            result += f"==={skill_name} - {mana_cost}\n"
 
         return result.strip()
