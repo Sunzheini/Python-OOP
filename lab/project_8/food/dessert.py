@@ -1,4 +1,4 @@
-from project.food.food import Food
+from project_10.food.food import Food
 
 
 class Dessert(Food):

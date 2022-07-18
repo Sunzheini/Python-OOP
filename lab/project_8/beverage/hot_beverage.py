@@ -1,6 +1,7 @@
-from project.beverage.hot_beverage import HotBeverage
+from project_10.beverage.beverage import Beverage
 
 
-class Tea(HotBeverage):
+class HotBeverage(Beverage):
     def __init__(self, name, price, milliliters):
         super().__init__(name, price, milliliters)
+

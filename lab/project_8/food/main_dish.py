@@ -1,6 +1,6 @@
-from project.food.starter import Starter
+from project_10.food.food import Food
 
 
-class Soup(Starter):
+class MainDish(Food):
     def __init__(self, name, price, grams):
         super().__init__(name, price, grams)

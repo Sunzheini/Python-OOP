@@ -120,9 +120,9 @@
 
 
 # 4
-from project.beverage.beverage import Beverage
-from project.food.soup import Soup
-from project.product import Product
+from project_8.beverage.beverage import Beverage
+from project_8.food.soup import Soup
+from project_8.product import Product
 
 product = Product("coffee", 2.5)
 print(product.__class__.__name__)
