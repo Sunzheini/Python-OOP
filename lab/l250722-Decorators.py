@@ -121,29 +121,179 @@
 # -----------------------------------------------------------------
 
 # 2
-from functools import wraps
+# from functools import wraps
+#
+#
+# def vowel_filter(func):
+#     vowels = 'eyuioa'
+#
+#     @wraps(func)
+#     def wrapper():
+#         result = func()
+#         return [x for x in result if x.lower() in vowels]
+#
+#     return wrapper
+#
+#
+# @vowel_filter
+# def get_letters():
+#     return ["a", "b", "c", "d", "e"]
+#
+#
+# print(get_letters())
 
-
-def vowel_filter(func):
-    vowels = 'eyuioa'
-
-    @wraps(func)
-    def wrapper():
-        result = func()
-        return [x for x in result if x.lower() in vowels]
-
-    return wrapper
-
-
-@vowel_filter
-def get_letters():
-    return ["a", "b", "c", "d", "e"]
-
-
-print(get_letters())
+# -----------------------------------------------------------------
+# accepting arguments - 98% ot dekoratorite se pishat s *args i **kwargs
+# from functools import wraps
+#
+#
+# def measure_time(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         return result
+#     return wrapper
+#
+#
+# @measure_time
+# def sum_two(x, y):
+#     return x + y
+#
+#
+# @measure_time
+# def sum_three(x, y, z):
+#     return x + y + z
+#
+#
+# print(sum_two(1, 2))
+# print(sum_three(1, 2, 3))
+# print(sum_three(1, 2, z=3))
 
 # -----------------------------------------------------------------
 
-# 1:40:00
+# 3
+# from functools import wraps
+#
+#
+# def even_numbers(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         return [x for x in result if x % 2 == 0]
+#     return wrapper
+#
+#
+# @even_numbers
+# def get_numbers(numbers):
+#     return numbers
+#
+#
+# print(get_numbers([1, 2, 3, 4, 5]))
+
+# -----------------------------------------------------------------
+# passing arguments
+
+# def dec(func):
+#
+#     def wrapper(*args, **kwargs):
+#         return func(*args, **kwargs)
+#
+#     return wrapper
+#
+#
+# # decorator factory - funckiq koqto ni vryshta dekorator, koito moje da vzima parametri
+# def dec_with_params(params):
+#     def dec(func):
+#         def wrapper(*args, **kwargs):
+#             return func(*args, **kwargs)
+#
+#         return wrapper
+#
+#     return dec
+#
+#
+# @dec
+# def x():
+#     pass
+#
+#
+# @dec_with_params(params='asd')      # !!!
+# def y():
+#     pass
+
+# -----------------------------------------------------------------
+
+import sys
+from functools import wraps
+
+
+def log(filepath):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            stdout_original = sys.stdout
+            with open(filepath, 'a') as file:
+                sys.stdout = file
+                result = func(*args, **kwargs)
+            sys.stdout = stdout_original
+            return result
+
+        return wrapper
+    return decorator
+
+
+@log(filepath='./log.txt')
+def say_hello(name):
+    print(f"Hello {name}")
+
+
+say_hello("Daniel")
+
+# -----------------------------------------------------------------
+#decorating methods in classes - po syshtiq nachin
+
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     @cache
+#     @measure_time
+#     def get_age_after_years(self, years):
+#         return self.age + years
+#
+#
+# p = Person('Daniel', 40)
+# print(p.get_age_after_years(10))
+
+# -----------------------------------------------------------------
+# decorators as classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
