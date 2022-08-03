@@ -17,9 +17,11 @@ class TestVehicle(TestCase):
         self.assertEqual(self.DEFAULT_FUEL_CONSUMPTION, self.vehicle.fuel_consumption)
 
     def test_drive_if_fuel_not_enough_raise_exception(self):
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as ex:
             self.vehicle.drive(100)
         self.assertEqual(self.FUEL, self.vehicle.fuel)
+
+        self.assertEqual("Not enough fuel", str(ex.exception))
 
     def test_drive_if_fuel_enough_subtract_fuel_needed(self):
         distance = 50
@@ -38,14 +40,25 @@ class TestVehicle(TestCase):
 
         self.assertEqual(0, self.vehicle.fuel)
 
-    def test4(self):    # -1.23.06
-        pass
+    def test_refuel_if_exceed_capacity_raise_exception(self):
+        with self.assertRaises(Exception) as ex:
+            self.vehicle.refuel(self.vehicle.capacity + 1)
 
-    def test5(self):
-        pass
+        self.assertEqual("Too much fuel", str(ex.exception))
 
-    def test6(self):
-        pass
+    def test_refuel_increases_fuel_in_tank(self):
+        fuel_amount = 20
+        self.vehicle.fuel -= fuel_amount
+
+        self.vehicle.refuel(fuel_amount)
+
+        self.assertEqual(self.FUEL, self.vehicle.fuel)
+
+    def test_str_returns_correct_string(self):
+        self.assertEqual(f"The vehicle has {self.HORSE_POWER}"
+                         f" horse power with {self.FUEL} fuel"
+                         f" left and {self.DEFAULT_FUEL_CONSUMPTION} fuel "
+                         f"consumption", str(self.vehicle))
 
 
 if __name__ == '__main__':
