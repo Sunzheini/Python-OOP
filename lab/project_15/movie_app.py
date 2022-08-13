@@ -1,5 +1,5 @@
-from project.movie_specification.movie import Movie
-from project.user import User
+from project_15.movie_specification.movie import Movie
+from project_15.user import User
 
 
 class MovieApp:

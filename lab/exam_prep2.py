@@ -1,6 +1,6 @@
-from project.movie_app import MovieApp
-from project.movie_specification.fantasy import Fantasy
-from project.movie_specification.action import Action
+from project_15.movie_app import MovieApp
+from project_15.movie_specification.fantasy import Fantasy
+from project_15.movie_specification.action import Action
 
 movie_app = MovieApp()
 print(movie_app.register_user('Martin', 24))

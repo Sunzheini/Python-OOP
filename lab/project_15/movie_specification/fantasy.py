@@ -1,9 +1,9 @@
-from project.movie_specification.movie import Movie
+from project_15.movie_specification.movie import Movie
 
 
-class Thriller(Movie):
+class Fantasy(Movie):
 
-    def __init__(self, title: str, year: int, owner: object, age_restriction: int = 16):
+    def __init__(self, title: str, year: int, owner: object, age_restriction: int = 6):
         super().__init__(title, year, owner, age_restriction)
 
         self.likes = 0
@@ -14,14 +14,19 @@ class Thriller(Movie):
 
     @age_restriction.setter
     def age_restriction(self, value):
-        if value < 16:
-            raise ValueError("Thriller movies must be restricted for audience under 16 years!")
+        if value < 6:
+            raise ValueError("Fantasy movies must be restricted for audience under 6 years!")
         self.__age_restriction = value
 
     def details(self):
-        result = f"Thriller - Title:{self.title}, Year:{self.year}, " \
+        result = f"Fantasy - Title:{self.title}, Year:{self.year}, " \
                  f"Age restriction:{self.age_restriction}, " \
                  f"Likes:{self.likes}, " \
                  f"Owned by:{self.owner.username}"
 
         return result
+
+
+
+
+
