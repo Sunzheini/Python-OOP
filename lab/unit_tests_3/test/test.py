@@ -1,6 +1,6 @@
 from unittest import TestCase, main
-#from project.pet_shop import PetShop
-from unit_tests.pet_shop import PetShop
+#from project_16.pet_shop import PetShop
+from unit_tests_3.pet_shop import PetShop
 
 
 # class PetShop:

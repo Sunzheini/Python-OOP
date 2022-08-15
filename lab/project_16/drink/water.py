@@ -1,4 +1,4 @@
-from project.drink.drink import Drink
+from project_16.drink.drink import Drink
 
 
 class Water(Drink):

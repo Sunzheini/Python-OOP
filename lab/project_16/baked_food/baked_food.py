@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from project.core.validator import Validator
+from project_16.core.validator import Validator
 
 
 class BakedFood(ABC):

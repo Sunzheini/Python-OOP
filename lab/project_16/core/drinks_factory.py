@@ -1,5 +1,5 @@
-from project.drink.tea import Tea
-from project.drink.water import Water
+from project_16.drink.tea import Tea
+from project_16.drink.water import Water
 
 
 class DrinksFactory:
